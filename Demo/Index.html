@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link href="icheck/css/custom.css?v=1.0.2" rel="stylesheet">
+	<link href="icheck/skins/all.css?v=1.0.2" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="src/inputFeeder.js"></script>
+	<script src="icheck/icheck.js?v=1.0.2"></script>
+	<script src="icheck/js/custom.min.js?v=1.0.2"></script>
+	<style type="text/css">
+	.check-list{position:relative;padding:33px 57px 17px;color:#555;background:#fff;border:3px solid #ddd8ce;width:500px}
+	.check-list ul{float:right}
+	.check-list ul:first-child{float:left}
+	.check-list ul li{position:relative;padding:0 18px 18px 42px}
+	.check-list ul input{position:absolute;top:4px;left:0}
+	.check-list ul .icheckbox_square-blue,.check-list ul .iradio_square-blue{position:absolute;top:-1px;left:0}
+	.check-list ul span{color:#bbb}
+	</style>
+	<body>
+		<h1>InputFeeder for checkbox</h1>
+		<div id="checkboxList" class="check-list clear"></div>
+		
+		<script type="text/javascript">
+		$(function () {
+			var data = [{"jobID": 1, "descJob":"email marketing"},{"jobID": 2,  "descJob":"onda 10 do auto"}
+						,{"jobID": 3, "descJob":"Companhia de abastecimento de águas"},{"jobID": 4, "descJob":"check 4"}
+						,{"jobID": 5, "descJob":"check 5"},{"jobID": 6,  "descJob":"check 6"}
+						,{"jobID": 7, "descJob":"check 7"},{"jobID": 8,  "descJob":"sms do obticario onda 3"}];
+			var dataMapper = {"id":"jobID","value":"jobID","label":"descJob"};
+			
+			$('#checkboxList').popCheckBox({
+				data: data,
+				dataMapper: dataMapper,
+				filterIgnoreCase: true,
+				columns: 2
+			});
+		});
+		</script>
+	</body>
+</head>
+</html>
